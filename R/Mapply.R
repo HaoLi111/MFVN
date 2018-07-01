@@ -27,3 +27,7 @@ Mapply<-function(x = get("x", envir = .GlobalEnv),
 #z=matrix(nrow=length(x),
 #         ncol=length(y))
 #ff=function(x,y) return(x^2+y)
+
+contour.function<-function(x,xbase=seq(from = -5,to=5,by=.1),ybase=seq(from = -5,to=5,by=.1),add=F){
+  contour(x=xbase,y=ybase,z=Mapply(xbase,ybase,x),add = add)
+}

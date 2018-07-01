@@ -1,10 +1,11 @@
 Package: MFVN
 Type: Package
 Title: Multivariable Functions Visual & Numerical library
-Version: 0.2.1
+Version: 0.2.2
 Author: Hao Li
 Maintainer: Hao Li <lhrcplanes@qq.com>
 Description: MFVN offers a number of tools to apply certain function to multidimensional space, managing data and functions, calculate numerical derivatives & antiderivatives for multivatiable functions and create different visualizations.
 License: GPL V3.0
 Encoding: UTF-8
 LazyData: true
+Import: scatterplot3d
