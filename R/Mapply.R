@@ -10,7 +10,7 @@ Mapply<-function(x = get("x", envir = .GlobalEnv),
   re<-matrix(nrow=length(x),ncol=length(y))
   if(is.function(f)){
   for(i in 1:length(x)){
-    re[i,]=f(x[i],y)
+    for(j in 1:length(y)) re[i,j]=f(x[i],y[j])
   }
   }else{
     if(is.character(f)) f<-parse(text = f)
@@ -28,6 +28,22 @@ Mapply<-function(x = get("x", envir = .GlobalEnv),
 #         ncol=length(y))
 #ff=function(x,y) return(x^2+y)
 
-contour.function<-function(x,xbase=seq(from = -5,to=5,by=.1),ybase=seq(from = -5,to=5,by=.1),add=F){
+contourFunction<-function(x,xbase=seq(from = -5,to=5,by=.05),ybase=seq(from = -5,to=5,by=.05),add=F){
+  contour(x=xbase,y=ybase,z=Mapply(xbase,ybase,x),add = add)
+}
+contour.function<-function(x,xbase=seq(from = -5,to=5,by=.05),ybase=seq(from = -5,to=5,by=.05),add=F){
+  contour(x=xbase,y=ybase,z=Mapply(xbase,ybase,x),add = add)
+}
+contourExpression<-function(x,xbase=seq(from = -5,to=5,by=.05),ybase=seq(from = -5,to=5,by=.05),add=F){
+  contour(x=xbase,y=ybase,z=Mapply(xbase,ybase,x),add = add)
+}
+
+contour.expression<-function(x,xbase=seq(from = -5,to=5,by=.05),ybase=seq(from = -5,to=5,by=.05),add=F){
+  contour(x=xbase,y=ybase,z=Mapply(xbase,ybase,x),add = add)
+}
+contourCharacter<-function(x,xbase=seq(from = -5,to=5,by=.05),ybase=seq(from = -5,to=5,by=.05),add=F){
+  contour(x=xbase,y=ybase,z=Mapply(xbase,ybase,x),add = add)
+}
+contour.character<-function(x,xbase=seq(from = -5,to=5,by=.05),ybase=seq(from = -5,to=5,by=.05),add=F){
   contour(x=xbase,y=ybase,z=Mapply(xbase,ybase,x),add = add)
 }

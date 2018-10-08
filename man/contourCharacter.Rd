@@ -1,5 +1,5 @@
-\name{contour.function}
-\alias{contour.function}
+\name{contour.character}
+\alias{contour.character}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 create implicit plot with x,y base
@@ -13,9 +13,9 @@ contour.function(func,xbase,ybase,add=F)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{func}{
-func is a function that return value or boolean vector
+func is a character written expression that return value or boolean vector
 }
-  \item{xbase}{
+\item{xbase}{
   range of x to loop for
 }
   \item{ybase}{
@@ -53,10 +53,10 @@ func is a function that return value or boolean vector
 \code{\link{ImpPlot2d}},~~~
 }
 \examples{
-contour(function(x,y) x^2 - .5*y^2<=.7)
+contour('x^2 - .5*y^2-.7')
 
 ## The function is currently defined as
-contour.function<-function(x,xbase=seq(from = -5,to=5,by=.1),ybase=seq(from = -5,to=5,by=.1)){
+contour.expression<-function(x,xbase=seq(from = -5,to=5,by=.1),ybase=seq(from = -5,to=5,by=.1)){
   contour(x=xbase,y=ybase,z=Mapply(xbase,ybase,x))
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

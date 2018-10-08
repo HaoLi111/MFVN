@@ -28,3 +28,19 @@ DFRead2<-function(df,target,independent = 1,dependent = seq(from = 2, to = ncol(
   }
     if(target ==dfx[length(dfx)]) dfy[length(dfx),]
 }
+
+DFFlatten<-function(df,independent = 1,dependent = 2: ncol(df)){
+  NAMES<-colnames(df)[-independent]
+  x=rep(df[,independent],length(dependent))
+  y=NULL
+  Asp=NULL
+  for(i in dependent) y=c(y,df[,dependent[i]])
+  Asp = rep(NAMES,each=length(x))
+  dtfm=data.frame(x,y,Asp)
+  class()
+}
+
+DFVis<-function(data){
+  require(ggplot2)
+  qplot(data=df,x=)
+}

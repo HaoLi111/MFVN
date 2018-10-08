@@ -21,11 +21,7 @@ ImpPlot2d(func = function(x,y) abs(x^2 +2*y^2-2)<=1e-2,x = seq(from=0,to=2,by=.0
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+
 }
 \references{
 %% ~put references to the literature/web site here ~
@@ -67,5 +63,5 @@ function(func, x = seq(from = -5,to = 5, by=.1),
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~implicit }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~plot }% use one of  RShowDoc("KEYWORDS")
+\keyword{ implicit }% use one of  RShowDoc("KEYWORDS")
+\keyword{ plot }% use one of  RShowDoc("KEYWORDS")

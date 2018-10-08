@@ -64,4 +64,4 @@ function(func,x=seq(from = -3, to = 3,by=.1),
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~exhausive }% use one of  RShowDoc("KEYWORDS")
+\keyword{ exhausive }% use one of  RShowDoc("KEYWORDS")

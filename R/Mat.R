@@ -36,17 +36,22 @@ MatGradB<-function(x,y,z){
 
 
 #View a 2 var data with 1 of the variables as the span axis
-MatSlic<-function(x,y,z,dimcode = 2,
+MatSlic<-function(x,y,z,dimcode = 2,xlab=NA,ylab=NA,
                   type = "b",
                   main = "z"){
+  
   if(dimcode==1){
+    if(is.na(xlab)) xlab = deparse(substitute(y))
+    if(is.na(ylab)) ylab = deparse(substitute(z))
     matplot(MatBase(y,x),t(z),type=type,main =main,
-            xlab = deparse(substitute(y)),
-            ylab = deparse(substitute(z)))
+            xlab = xlab,
+            ylab = ylab)
   }else{
+    if(is.na(xlab)) xlab= deparse(substitute(x))
+    if(is.na(ylab)) ylab = deparse(substitute(z))
     matplot(MatBase(x,y),z,type=type,main = main,
-            xlab = deparse(substitute(x)),
-            ylab = deparse(substitute(z)))
+            xlab = xlab,
+            ylab = ylab)
   }
 }
 
@@ -55,13 +60,21 @@ MatSlic<-function(x,y,z,dimcode = 2,
 #MatSlic(1:3,1:3,z)
 
 #MVis
-MatVis<-function(x,y,z,f= NULL,
+MatVis<-function(x,...) UseMethod('MatVis')
+MatVis.matrix<-function(x,y=NULL,z=NULL,xlab=NULL,ylab=NULL,zlab=NULL,asp = 1,
+                        aspect = c('persp','fill.contour','MatSlic','MatSlicT')){
+  #layoutting
+  if(length(aspect)>1){
+    
+  }else{
+    show(get(aspect)(x))
+    }
+}
+MatVis.list<-function(x,y,z,
                aspect = c("persp","contour","Slice","Slice.t")){
-  if(is.list(x)){
     y<-x[2]
     z<-x[3]
     x<-x[1]
-  }
-  if(!is.null(f)) z<-Mapply(x,y,f)
-  layout((matrix(length())))
+  
 }
+#MatVis(MatRand(3,3),'fill.contour')

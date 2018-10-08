@@ -24,10 +24,13 @@ One line of the data (a column of variable)
 LinL(x = x = c(1,2,5,7,6),y = c(3,5,6,4,6))
 
 ## The function is currently defined as
-function (x)
-{
+function(x,y){
+  if(length(x) ==length(y)){
+    sum(sqrt( (diff(x))^2 +  (diff(y))^2))
+  }else{
+    message('length(x)!=length(y)')
   }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~length }% use one of  RShowDoc("KEYWORDS")
+\keyword{ length }% use one of  RShowDoc("KEYWORDS")

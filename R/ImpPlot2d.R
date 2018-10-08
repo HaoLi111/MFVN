@@ -1,5 +1,5 @@
-#ImpPlot2d<-function(func,...) UseMethod('ImpPlot2d')
-ImpPlot2d<-function(func, x = seq(from = -5,to = 5, by=.1),
+ImpPlot2d<-function(func,...) UseMethod('ImpPlot2d')
+ImpPlot2d.function<-function(func, x = seq(from = -5,to = 5, by=.1),
                              y = seq(from = -5,to = 5, by=.1),
                              xlab = 'x',ylab = 'y',
                              asp = 1,col = 'red',
@@ -16,4 +16,5 @@ ImpPlot2d<-function(func, x = seq(from = -5,to = 5, by=.1),
     }
   message('plot completed')
 }
+
 
