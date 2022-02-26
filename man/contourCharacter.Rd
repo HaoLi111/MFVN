@@ -59,7 +59,6 @@ contour('x^2 - .5*y^2-.7')
 contour.expression<-function(x,xbase=seq(from = -5,to=5,by=.1),ybase=seq(from = -5,to=5,by=.1)){
   contour(x=xbase,y=ybase,z=Mapply(xbase,ybase,x))
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
+}
 \keyword{ ~implicit }% use one of  RShowDoc("KEYWORDS")
 \keyword{ ~2d }% __ONLY ONE__ keyword per line
