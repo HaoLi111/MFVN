@@ -67,5 +67,6 @@ function(x,y,xscale,yscale){
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
+}
 \keyword{ base }% use one of  RShowDoc("KEYWORDS")
 
