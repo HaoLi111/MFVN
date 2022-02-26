@@ -61,5 +61,6 @@ contour.function<-function(x,xbase=seq(from = -5,to=5,by=.1),ybase=seq(from = -5
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
+}
 \keyword{ ~implicit }% use one of  RShowDoc("KEYWORDS")
 \keyword{ ~2d }% __ONLY ONE__ keyword per line
