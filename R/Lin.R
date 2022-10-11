@@ -55,7 +55,7 @@ LinRead<-function(a,b,aa,plot=F){
         break
       }
     }
-    if(aa=a[length(a)]) bb = b[length(a)]
+    if(aa==a[length(a)]) bb = b[length(a)]
     if(plot == T){
       points(aa,bb,type="p",col="red")
     title(main="linRead Visual feedback: Read data success")
