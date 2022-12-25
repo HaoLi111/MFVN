@@ -39,33 +39,18 @@ LinBase<-function(x,acc,contain.first = TRUE){
 
 #linear read table
 
-LinRead<-function(a,b,aa,plot=F){
-  w<-length(a)
-  if (w==length(b)){
-    if (plot ==T) plot(a,b,type="l")
-    #x=cbind(a,b)
-    for(i in (1:(w-1))){
-      if(aa<a[i+1]){
-        x1=a[i]
-        y1=b[i]
-        x2=a[i+1]
-        y2=b[i+1]
-        m=(y2-y1)/(x2-x1)
-        bb=(m*(aa-x1))+y1
-        break
-      }
+LinRead<-function(a,b,aa){
+  n = length(a)
+  if(n!= length(b)) warning("Length differ")
+  #print(a)
+  #print(b)
+  for(i in 2:length(a)){
+    if (aa<a[i]){
+      if(a[i]-a[i-1]==0) return(b[i]/2+b[i+1]/2)
+      return(b[i-1]+(b[i]-b[i-1])*(aa-a[i-1])/(a[i]-a[i-1]))
     }
-    if(aa==a[length(a)]) bb = b[length(a)]
-    if(plot == T){
-      points(aa,bb,type="p",col="red")
-    title(main="linRead Visual feedback: Read data success")
-    }
-  }else{
-    message("read data failed: length of the variable")
   }
-  #return(plot(a,b,lty="b"))
-  return(bb)
-  #return(r)
+  return(b[n])
 }
 
 #linRead(a,b,3.5)
